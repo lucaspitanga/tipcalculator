@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gorjeta</title>
+
+    <!-- Style Manual -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Style Bootstrap -->
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <!-- Font Ref -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <!-- FavIcon -->
+    <link rel="icon" href="./assets/img/favicon-32x32.png">
+
+</head>
+<body>
+
+    <p id="outputId" class="hidden" value="0"></p>
+    
+    
+    <main>
+        <div class="d-flex justify-content-center mt-5">
+        <img src="./assets/img/logo.svg" alt="logo.svg">
+        </div>
+        <div class="container pb-4 mt-5 mb-5">
+            <div class="container_desktop">
+            <div class="p-4">
+                <p>Bill</p>
+                <img src="./assets/img/icon-dollar.svg" alt="icon-dollar.svg" class="img_fixo">
+                <input type="text" name="tip" id="billId" class="input_primario form-control input_dinheiro" onkeyup="myFunction()" value="0">
+            </div>
+
+            <div class="p-4">
+                <p>Select Tip %</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <div class="d-flex flex-column">
+                        <button class="button_tip" id="cincoId" value="0.05" onclick="myFunction(0.05)">5%</button>
+                        <button class="button_tip" id="quinzeId" value="0.15" onclick="myFunction(0.15)">15%</button>
+                        <button class="button_tip" id="cinquentaId" value="0.50" onclick="myFunction(0.50)">50%</button>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <button class="button_tip" id="dezId" value="0.10" onclick="myFunction(0.10)">10%</button>
+                        <button class="button_tip" id="vinteId" value="0.25" onclick="myFunction(0.25)">25%</button>
+                        <input type="text" placeholder="Custom" class="input_custom" id="customId" onkeyup="myFunction(value / 100)">
+
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="p-4">
+                <p>Number of People</p>
+                <img src="./assets/img/icon-person.svg" alt="" class="img_fixo">
+                <input type="text" name="tip" id="peopleId" class="input_primario form-control input_dinheiro" onkeyup="myFunction()" value="0">
+            </div>
+        </div>
+
+            <div class="container_calc">
+                <div class="d-flex d-grid pt-3 px-3">
+
+                    <div class="col flex-column">
+                    <label class="texto_calc" for="">Tip Amount</label>
+                    <p class="texto_calc--op">/person</p>
+                    </div>
+                    <div class="col texto_resultado">
+                        <p id="tipId">$0.00</p>
+                        </div>
+                </div>
+
+                <div class="d-flex d-grid pt-3 px-3">
+
+                    <div class="col flex-column">
+                    <label class="texto_calc" for="">Total</label>
+                    <p class="texto_calc--op">/person</p>
+                    </div>
+                    <div class="col texto_resultado">
+                        <p id="personId">$0.00</p>
+                        </div>
+                </div>
+
+                <div class="d-flex justify-content-center pb-3 mx-3">
+                    <button class="button_reset" onclick="clearResult()">RESET</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- JS Manual -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- JS Bootstrap -->
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
